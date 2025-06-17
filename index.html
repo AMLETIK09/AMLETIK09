@@ -1,161 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Приглашение на свадьбу</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
-      color: #333;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      color: #d6336c;
-      margin-bottom: 10px;
-    }
-
-    p.subtitle {
-      font-size: 20px;
-      margin-bottom: 40px;
-    }
-
-    .photos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .person {
-      width: 220px;
-    }
-
-    .person img {
-      width: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      height: 220px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .person p {
-      margin-top: 12px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .countdown {
-      font-size: 22px;
-      margin-top: 20px;
-      color: #d6336c;
-      font-weight: bold;
-    }
-
-    iframe {
-      border: 0;
-      width: 100%;
-      height: 350px;
-      margin-top: 40px;
-      border-radius: 12px;
-    }
-
-    footer {
-      font-size: 16px;
-      color: #555;
-      margin-top: 40px;
-    }
-  
-    @media (max-width: 768px) {
-      .photos {
-        flex-direction: column;
-        align-items: center;
-      }
-      .person {
-        width: 70%;
-      }
-      .person img {
-        height: auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 28px;
-      }
-      .subtitle {
-        font-size: 18px;
-      }
-      .countdown {
-        font-size: 18px;
-      }
-    }
-    </style>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебное приглашение</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Приглашение на свадьбу</h1>
-    <p class="subtitle">С любовью приглашаем вас на наш счастливый день!</p>
+    <audio autoplay loop>
+        <source src="romantic.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+    <div class="container">
+        <h1>Виктория и Виталий</h1>
+        <p class="invitation-text">
+            Мы рады пригласить вас на самый важный день в нашей жизни — день нашей свадьбы!<br><br>
+            Церемония и праздничный ужин состоятся<br>
+            <strong>16:30</strong>, по адресу:<br>
+            <strong>г. Темрюк, ул. Кирова 6/1</strong>.<br><br>
+            Мы будем счастливы разделить этот день с вами!
+        </p>
 
-    <div class="photos">
-      <div class="person">
-        <img src="витя.jpg" alt="Жених">
-        <p>Жених — Виктор Викторович</p>
-      </div>
-      <div class="person">
-        <img src="вика.jpg" alt="Невеста">
-        <p>Невеста — Виктория Юрьевна</p>
-      </div>
+        <form id="rsvp-form">
+            <h2>Подтвердите участие</h2>
+            <label>Ваше имя:</label>
+            <input type="text" name="name" required><br>
+            <label>Придёте ли вы?</label>
+            <select name="attendance" required>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+                <option value="Возможно">Возможно</option>
+            </select><br>
+            <label>Количество гостей (вместе с вами):</label>
+            <input type="number" name="guests" min="1" max="10"><br>
+            <label>Комментарий:</label>
+            <textarea name="comment"></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+        <p id="status-message"></p>
     </div>
-
-    <p class="subtitle">Свадьба состоится 21 августа 2025 года<br>в г. Темрюк, ресторан «Парк Холл»</p>
-
-    <div class="countdown" id="countdown">Загрузка обратного отсчёта...</div>
-
-    <iframe 
-      src="https://www.google.com/maps/embed/v1/place?q=ресторан+Парк+Холл,+Темрюк,+Россия&key=YOUR_GOOGLE_MAPS_API_KEY" 
-      allowfullscreen>
-    </iframe>
-
-    <footer>
-      <p>Будем счастливы видеть вас среди гостей ❤️</p>
-    </footer>
-  </div>
-
-  <script>
-    const countdownElement = document.getElementById('countdown');
-    const weddingDate = new Date('2025-08-21T00:00:00');
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = weddingDate - now;
-
-      if (diff <= 0) {
-        countdownElement.innerText = 'Свадьба уже состоялась!';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownElement.innerText = `До свадьбы осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
