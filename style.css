@@ -1,0 +1,49 @@
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #fff5f7;
+    color: #333;
+}
+.container {
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    margin-bottom: 0.3em;
+    color: #c94f7c;
+}
+.invitation-text {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+}
+button {
+    background: #c94f7c;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background: #a83f64;
+}
