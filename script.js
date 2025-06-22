@@ -48,17 +48,3 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         document.getElementById('status-message').innerText = "Ошибка при отправке. Попробуйте позже.";
     }
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const weddingDate = new Date('2025-08-21T16:30:00').getTime();
-  const now = new Date().getTime();
-  const secondsTillWedding = Math.max(0, Math.floor((weddingDate - now) / 1000));
-
-  const clock = new FlipClock(document.querySelector('.clock'), secondsTillWedding, {
-    countdown: true,
-    clockFace: 'DailyCounter'
-  });
-
-  clock.on('stop', () => {
-    document.querySelector('.clock').innerHTML = '<p>Наша свадьба уже состоялась!</p>';
-  });
-});
