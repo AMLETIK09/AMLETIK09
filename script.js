@@ -18,32 +18,33 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // RSVP Telegram отправка
-document.getElementById('rsvp-form').addEventListener('submit', function (e) {
-  e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const attending = document.getElementById('attending').value;
-  const message = document.getElementById('message').value.trim();
+document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const name = data.get('name');
+    const attendance = data.get('attendance');
+    const guests = data.get('guests');
+    const comment = data.get('comment');
 
-  const text = `📩 Новое RSVP-приглашение:\n👤 Имя: ${name}\n📌 Придёт: ${attending}\n💬 Сообщение: ${message}`;
-  const botToken = '8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs';
-  const chatId = '-1002552991233';
+    const message = `🎉 Новая RSVP заявка:\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment}`;
 
-  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: chatId, text: text }),
-  })
-    .then(response => {
-      if (response.ok) {
-        alert('Спасибо! Ваш ответ получен ❤️');
-        document.getElementById('rsvp-form').reset();
-      } else {
-        alert('Ошибка при отправке. Попробуйте позже.');
-      }
-    })
-    .catch(error => {
-      alert('Сбой соединения. Попробуйте позже.');
-      console.error(error);
-    });
+    const telegramBotToken = "8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs";
+    const chatId = "-1002552991233";
+
+    try {
+        await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
+        });
+        form.reset();
+        document.getElementById('status-message').innerText = "Спасибо! Ответ отправлен 💌";
+    } catch (error) {
+        document.getElementById('status-message').innerText = "Ошибка при отправке. Попробуйте позже.";
+    }
 });
