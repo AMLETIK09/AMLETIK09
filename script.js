@@ -1,6 +1,6 @@
-
 const countdown = document.getElementById('countdown');
 const weddingDate = new Date('2025-08-21T16:30:00');
+
 function updateCountdown() {
   const now = new Date();
   const diff = weddingDate - now;
@@ -16,7 +16,34 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
-document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+
+// RSVP Telegram отправка
+document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  alert('Спасибо за ответ! Мы получили вашу информацию.');
+
+  const name = document.getElementById('name').value.trim();
+  const attending = document.getElementById('attending').value;
+  const message = document.getElementById('message').value.trim();
+
+  const text = `📩 Новое RSVP-приглашение:\n👤 Имя: ${name}\n📌 Придёт: ${attending}\n💬 Сообщение: ${message}`;
+  const botToken = '8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs';
+  const chatId = '-1002552991233';
+
+  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text: text }),
+  })
+    .then(response => {
+      if (response.ok) {
+        alert('Спасибо! Ваш ответ получен ❤️');
+        document.getElementById('rsvp-form').reset();
+      } else {
+        alert('Ошибка при отправке. Попробуйте позже.');
+      }
+    })
+    .catch(error => {
+      alert('Сбой соединения. Попробуйте позже.');
+      console.error(error);
+    });
 });
