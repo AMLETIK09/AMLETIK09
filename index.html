@@ -1,1 +1,19 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Свадебное приглашение</title><link rel="stylesheet" href="styles.css"></head><body><audio autoplay loop><source src="romantic.mp3" type="audio/mpeg"></audio><div class="container"><h1 class="header">Свадьба Виктора и Виктории</h1><p class="subheader">Мы будем рады видеть вас на нашей свадьбе!</p><div class="photos"><div class="photo-card"><img src="images/vitia.jpg" alt="Виктор Викторович"><p>Виктор Викторович</p></div><div class="photo-card"><img src="images/vika.jpg" alt="Виктория Юрьевна"><p>Виктория Юрьевна</p></div></div><div class="group-photo"><img src="images/together.jpg" alt="Молодожёны"><p>Наши молодожёны будут счастливы видеть вас на своём празднике!</p></div><div class="info"><p><strong>Дата:</strong> 21 августа 2025</p><p><strong>Время:</strong> 16:30</p><p><strong>Адрес:</strong> г. Темрюк, ул. Кирова 6/1, ресторан "Парк Холл"</p></div><div id="countdown"></div><iframe src="https://www.google.com/maps?q=Темрюк+Кирова+6/1&output=embed" allowfullscreen loading="lazy"></iframe><form id="rsvp-form"><h2>Подтвердите своё присутствие</h2><input type="text" name="name" placeholder="Ваше имя" required><input type="number" name="guests" placeholder="Количество гостей" required><textarea name="message" placeholder="Пожелания или сообщение"></textarea><button type="submit">Отправить</button></form></div><script src="script.js"></script></body></html>
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Свадебное приглашение</title><link rel="stylesheet" href="styles.css"></head><body><audio autoplay loop><source src="romantic.mp3" type="audio/mpeg"></audio><div class="container"><h1 class="header">Свадьба Виктора и Виктории</h1><p class="subheader">Мы будем рады видеть вас на нашей свадьбе!</p><div class="photos"><div class="photo-card"><img src="images/vitia.jpg" alt="Виктор Викторович"><p>Виктор Викторович</p></div><div class="photo-card"><img src="images/vika.jpg" alt="Виктория Юрьевна"><p>Виктория Юрьевна</p></div></div><div class="group-photo"><img src="images/together.jpg" alt="Молодожёны"><p>Наши молодожёны будут счастливы видеть вас на своём празднике!</p></div><div class="info"><p><strong>Дата:</strong> 21 августа 2025</p><p><strong>Время:</strong> 16:30</p><p><strong>Адрес:</strong> г. Темрюк, ул. Кирова 6/1, ресторан "Парк Холл"</p></div><div id="countdown"></div><iframe src="https://www.google.com/maps?q=Темрюк+Кирова+6/1&output=embed" allowfullscreen loading="lazy"></iframe><form id="rsvp-form">
+            <h2>Подтвердите участие</h2>
+            <label>Ваше имя:</label>
+            <input type="text" name="name" required><br>
+            <label>Придёте ли вы?</label>
+            <select name="attendance" required>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+                <option value="Возможно">Возможно</option>
+            </select><br>
+            <label>Количество гостей (вместе с вами):</label>
+            <input type="number" name="guests" min="1" max="10"><br>
+            <label>Комментарий:</label>
+            <textarea name="comment"></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+        <p id="status-message"></p>
+    </div>
+    <script src="script.js"></script></body></html>
