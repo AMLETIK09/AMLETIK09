@@ -48,3 +48,15 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         document.getElementById('status-message').innerText = "Ошибка при отправке. Попробуйте позже.";
     }
 });
+<script>
+  function getNameFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("name");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const name = getNameFromURL();
+    if (name) {
+      document.getElementById("greeting").innerText = `Дорогая, ${name}!`;
+    }
+  });
