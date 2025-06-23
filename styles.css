@@ -75,3 +75,14 @@ form button {
   border-radius: 10px;
   cursor: pointer;
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #cc8966;
+  color: #ffffff; /* или другой читаемый цвет */
+
+background-color: #cc8966;
+background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+background-repeat: repeat;
+}
