@@ -12,10 +12,11 @@ body {
   text-align: center;
 }
 .header {
-  font-family: 'Great Vibes', cursive;
-    font-size: 3em;
-    margin-bottom: 0.3em;
-    color: #c94f7c;
+  font-family: 'Patrician', serif; 
+  font-size: 23pt;
+  line-height: 1.5;
+  color: #000000;
+  font-weight: normal;
 }
 .subheader {
   font-size: 1.3em;
