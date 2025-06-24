@@ -87,3 +87,7 @@ background-color: #cc8966;
 background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
 background-repeat: repeat;
 }
+@font-face {
+  font-family: 'Patrician';
+  src: url('fonts/Patrician.ttf') format('truetype');
+}
