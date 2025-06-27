@@ -1,10 +1,12 @@
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(#fff0f5, #ffe4e1);
-  background-image: url('https://www.transparenttextures.com/patterns/pink-paper.png');
+  padding: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #FAF0E6; 
+  color: #333333; 
 }
+
 .container {
   max-width: 900px;
   margin: auto;
@@ -15,7 +17,7 @@ body {
   font-family: 'Patrician', serif; 
   font-size: 23pt;
   line-height: 1.5;
-  color: #000000;
+  color: #333333; 
   font-weight: normal;
 }
 .subheader {
@@ -75,11 +77,4 @@ form button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #FAF0E6; 
-  color: #333333; 
 }
