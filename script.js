@@ -2,18 +2,29 @@ const countdown = document.getElementById('countdown');
 const weddingDate = new Date('2025-08-21T16:30:00');
 
 function updateCountdown() {
-  const now = new Date();
+  const weddingDate = new Date("2025-08-21T16:30:00").getTime();
+  const now = new Date().getTime();
   const diff = weddingDate - now;
+
   if (diff <= 0) {
-    countdown.innerHTML = "<p>Свадьба уже состоялась!</p>";
+    document.querySelector(".countdown-clean").innerHTML = "<p>Свадьба уже состоялась!</p>";
     return;
   }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  countdown.innerHTML = `<p>До свадьбы осталось: ${days} дн ${hours} ч ${minutes} мин ${seconds} сек</p>`;
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const weeks = Math.floor(totalSeconds / (7 * 24 * 3600));
+  const days = Math.floor((totalSeconds % (7 * 24 * 3600)) / (24 * 3600));
+  const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById("weeks").textContent = String(weeks).padStart(2, "0");
+  document.getElementById("days").textContent = String(days).padStart(2, "0");
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 }
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
