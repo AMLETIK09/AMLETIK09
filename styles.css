@@ -102,3 +102,24 @@ form button {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.custom-text {
+  font-family: 'Patrician', serif;
+  font-size: 23pt;
+  line-height: 1.5;
+  color: #333333;
+  font-weight: normal;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.custom-text h2 {
+  font-size: 26pt;
+  margin-top: 40px;
+  color: #8b0000;
+  font-weight: bold;
+}
+
+.custom-text p {
+  margin-top: 15px;
+}
