@@ -7,7 +7,7 @@ function updateCountdown() {
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    document.querySelector(".countdown-clean").innerHTML = "<p>Свадьба уже состоялась!</p>";
+    document.querySelector(".countdown-clean").innerHTML = "<p>🎉 Свадьба уже состоялась!</p>";
     return;
   }
 
@@ -26,8 +26,7 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown(); // запускаем сразу
-
+updateCountdown();
 // RSVP Telegram отправка
 
 document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
