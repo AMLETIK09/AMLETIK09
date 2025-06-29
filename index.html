@@ -15,29 +15,30 @@
                         <source src="romantic.mp3">
             </audio><div class="container">
                         <h1 class="header">Свадьба Виктора и Виктории</h1>
-                                                            <section class="countdown-clean">
-  <div class="unit">
-    <div id="weeks">00</div>
-    <label>недель</label>
-  </div>
-  <div class="unit">
-    <div id="days">00</div>
-    <label>дней</label>
-  </div>
-  <div class="unit">
-    <div id="hours">00</div>
-    <label>часов</label>
-  </div>
-  <div class="unit">
-    <div id="minutes">00</div>
-    <label>минут</label>
+                                                           <script>
+    const countdownElement = document.getElementById('countdown');
+    const weddingDate = new Date('2025-08-21T00:00:00');
 
- </div>
-  <div class="unit">
-  <div id="seconds">00</div>
-    <label>секунд</label>    
-  </div>
-</section>
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        countdownElement.innerText = 'Свадьба уже состоялась!';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownElement.innerText = `До свадьбы осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
                         <h2 id="greeting">Добро пожаловать!</h2>
                         <div class="photos"><div class="photo-card">
                                     <img src="images/vitia.jpg" alt="Виктор Викторович">
