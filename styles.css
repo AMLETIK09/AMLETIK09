@@ -78,3 +78,27 @@ form button {
   border-radius: 10px;
   cursor: pointer;
 }
+.countdown-clean {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.countdown-clean .unit {
+  text-align: center;
+}
+
+.countdown-clean .unit div {
+  font-size: 3em;
+  font-weight: 300;
+  color: #222;
+}
+
+.countdown-clean .unit label {
+  font-size: 0.9em;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
