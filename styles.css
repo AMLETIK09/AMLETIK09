@@ -1,10 +1,15 @@
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
 body {
   background-color: #ffffff;
   color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
 .container {
@@ -15,11 +20,12 @@ body {
 }
 
 .header {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
   font-size: 2.8rem;
   color: #8b0000;
   margin-bottom: 20px;
-  font-weight: normal;
+  letter-spacing: 0.5px;
 }
 
 .subheader {
@@ -33,19 +39,6 @@ body {
   flex-wrap: wrap;
   gap: 40px;
   margin: 30px 0;
-}
-
-.photo-card {
-  text-align: center;
-}
-
-.photo-card img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #e8d0d3;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .photo-card {
@@ -141,7 +134,6 @@ iframe {
   justify-content: center;
   gap: 25px;
   margin: 40px auto;
-  font-family: 'Arial', sans-serif;
 }
 
 .countdown-clean .unit {
@@ -153,32 +145,36 @@ iframe {
 }
 
 .countdown-clean .unit div {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
   font-size: 2.8rem;
-  font-weight: bold;
   color: #8b0000;
 }
 
 .countdown-clean .unit label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   font-size: 1rem;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   display: block;
   margin-top: 8px;
 }
 
 /* Стили для текстового контента */
 .custom-text {
-  font-family: 'Playfair Display', serif;
   text-align: left;
   max-width: 800px;
   margin: 50px auto;
   padding: 0 20px;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
 .custom-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
   font-size: 2.2rem;
   margin-top: 40px;
   color: #8b0000;
@@ -202,10 +198,11 @@ iframe {
 }
 
 #rsvp-form h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
   text-align: center;
   color: #8b0000;
   margin-bottom: 25px;
-  font-family: 'Playfair Display', serif;
 }
 
 #rsvp-form label {
@@ -223,6 +220,7 @@ iframe {
   border-radius: 8px;
   font-size: 1rem;
   background: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #rsvp-form button {
@@ -238,6 +236,7 @@ iframe {
   font-size: 1.1rem;
   font-weight: bold;
   transition: background 0.3s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #rsvp-form button:hover {
@@ -256,10 +255,9 @@ iframe {
 .countdown-clean {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Разрешаем перенос блоков */
+  flex-wrap: wrap;
   gap: 15px;
   margin: 40px auto;
-  font-family: 'Arial', sans-serif;
 }
 
 .countdown-clean .unit {
@@ -267,22 +265,25 @@ iframe {
   border-radius: 12px;
   padding: 15px 10px;
   min-width: 70px;
-  flex: 1; /* Гибкие элементы */
-  max-width: 100px; /* Максимальная ширина */
+  flex: 1;
+  max-width: 100px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .countdown-clean .unit div {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
   font-size: 2.2rem;
-  font-weight: bold;
   color: #8b0000;
 }
 
 .countdown-clean .unit label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   font-size: 0.9rem;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   display: block;
   margin-top: 8px;
 }
@@ -352,7 +353,7 @@ iframe {
   }
   
   .custom-text {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
   
   .custom-text h2 {
@@ -404,83 +405,4 @@ iframe {
   padding: 40px 30px;
   border-radius: 15px;
   margin: 40px 0;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  border: 1px solid #e8d0d3;
-  font-family: 'Playfair Display', serif;
-}
-
-.dress-code-exact h2 {
-  color: #8b0000;
-  margin-bottom: 25px;
-  font-size: 2.5rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.dress-text p {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  margin: 15px 0;
-  color: #5d4037;
-}
-
-.dress-for {
-  margin-top: 35px;
-}
-
-.dress-for h3 {
-  color: #8b0000;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.dress-description p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin: 10px 0;
-  color: #5d4037;
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-  .dress-code-exact {
-    padding: 30px 20px;
-  }
-  
-  .dress-code-exact h2 {
-    font-size: 2rem;
-  }
-  
-  .dress-text p {
-    font-size: 1.1rem;
-  }
-  
-  .dress-for h3 {
-    font-size: 1.5rem;
-  }
-  
-  .dress-description p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .dress-code-exact h2 {
-    font-size: 1.8rem;
-  }
-  
-  .dress-text p {
-    font-size: 1rem;
-  }
-  
-  .dress-for h3 {
-    font-size: 1.3rem;
-  }
-  
-  .dress-description p {
-    font-size: 1rem;
-  }
-}
+  text-align
