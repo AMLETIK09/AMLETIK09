@@ -304,3 +304,56 @@ iframe {
     font-size: 0.6rem;
   }
 }
+/* Общие адаптивные стили */
+@media (max-width: 768px) {
+  .header {
+    font-size: 2.2rem;
+  }
+  
+  .custom-text {
+    font-size: 1rem;
+  }
+  
+  .custom-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .photos {
+    gap: 20px;
+  }
+  
+  .photo-card img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 1.8rem;
+  }
+  
+  #greeting {
+    font-size: 1.3rem;
+  }
+  
+  .photos {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .photo-card img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .info {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  #rsvp-form {
+    padding: 20px;
+  }
+}
