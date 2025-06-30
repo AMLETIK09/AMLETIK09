@@ -1,36 +1,40 @@
 /* Подключение шрифтов */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/patrician');
+@import url('https://fonts.cdnfonts.com/css/tilda-sans');
 
 body {
   background-color: #ffffff;
   color: #333;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Tilda Sans', sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  text-align: center; /* Выравнивание всего текста по центру */
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
 }
 
 .header {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Patrician', serif;
+  font-weight: 400;
   font-size: 2.8rem;
   color: #8b0000;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
+  text-align: center; /* Центрирование заголовка */
 }
 
 .subheader {
   font-size: 1.3em;
   margin-bottom: 20px;
+  text-align: center; /* Центрирование подзаголовка */
 }
 
 .photos {
@@ -69,6 +73,7 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   color: #5d4037;
+  text-align: center; /* Центрирование подписи */
 }
 
 .group-photo img {
@@ -78,6 +83,10 @@ body {
   margin: 30px auto;
   border-radius: 0;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.group-photo p {
+  text-align: center; /* Центрирование текста под фото */
 }
 
 @media (max-width: 768px) {
@@ -110,13 +119,14 @@ body {
   padding: 25px;
   border-radius: 15px;
   margin: 40px 0;
-  text-align: center;
   font-size: 1.1rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center; /* Центрирование текста */
 }
 
 .info p {
   margin: 10px 0;
+  text-align: center; /* Центрирование текста */
 }
 
 iframe {
@@ -145,15 +155,15 @@ iframe {
 }
 
 .countdown-clean .unit div {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Patrician', serif;
+  font-weight: 400;
   font-size: 2.8rem;
   color: #8b0000;
 }
 
 .countdown-clean .unit label {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Tilda Sans', sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   color: #666;
   text-transform: uppercase;
@@ -164,27 +174,27 @@ iframe {
 
 /* Стили для текстового контента */
 .custom-text {
-  text-align: left;
   max-width: 800px;
   margin: 50px auto;
   padding: 0 20px;
   font-size: 1.15rem;
   line-height: 1.7;
+  text-align: center; /* Центрирование текста */
 }
 
 .custom-text h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Patrician', serif;
+  font-weight: 400;
   font-size: 2.2rem;
   margin-top: 40px;
   color: #8b0000;
-  text-align: center;
   border-bottom: 2px solid #e8d0d3;
   padding-bottom: 10px;
 }
 
 .custom-text p {
   margin-top: 20px;
+  text-align: center; /* Центрирование текста */
 }
 
 /* Стили формы */
@@ -193,14 +203,13 @@ iframe {
   padding: 30px;
   border-radius: 15px;
   margin: 40px 0;
-  text-align: left;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center; /* Центрирование формы */
 }
 
 #rsvp-form h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  text-align: center;
+  font-family: 'Patrician', serif;
+  font-weight: 400;
   color: #8b0000;
   margin-bottom: 25px;
 }
@@ -209,34 +218,39 @@ iframe {
   display: block;
   margin: 20px 0 8px;
   font-weight: bold;
+  text-align: center; /* Центрирование меток */
 }
 
 #rsvp-form input,
 #rsvp-form select,
 #rsvp-form textarea {
   width: 100%;
+  max-width: 400px;
   padding: 14px;
   border: 1px solid #e0c5c9;
   border-radius: 8px;
   font-size: 1rem;
   background: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Tilda Sans', sans-serif;
+  margin: 0 auto; /* Центрирование полей ввода */
+  display: block;
 }
 
 #rsvp-form button {
-  display: block;
   width: 100%;
+  max-width: 400px;
   padding: 15px;
   background: #8b0000;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 30px;
+  margin: 30px auto 0;
   font-size: 1.1rem;
   font-weight: bold;
   transition: background 0.3s;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Tilda Sans', sans-serif;
+  display: block;
 }
 
 #rsvp-form button:hover {
@@ -244,12 +258,12 @@ iframe {
 }
 
 #status-message {
-  text-align: center;
   margin-top: 20px;
   font-weight: bold;
   font-size: 1.1rem;
   padding: 10px;
   border-radius: 5px;
+  text-align: center; /* Центрирование статусного сообщения */
 }
 /* Адаптивный таймер */
 .countdown-clean {
@@ -271,15 +285,15 @@ iframe {
 }
 
 .countdown-clean .unit div {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
+  font-family: 'Patrician', serif;
+  font-weight: 400;
   font-size: 2.2rem;
   color: #8b0000;
 }
 
 .countdown-clean .unit label {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Tilda Sans', sans-serif;
+  font-weight: 400;
   font-size: 0.9rem;
   color: #666;
   text-transform: uppercase;
@@ -405,4 +419,89 @@ iframe {
   padding: 40px 30px;
   border-radius: 15px;
   margin: 40px 0;
-  text-align
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border: 1px solid #e8d0d3;
+  font-family: 'Patrician', serif;
+  text-align: center; /* Центрирование текста */
+}
+
+.dress-code-exact h2 {
+  color: #8b0000;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.dress-text p {
+  font-family: 'Tilda Sans', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin: 15px 0;
+  color: #5d4037;
+  font-weight: 400;
+}
+
+.dress-for {
+  margin-top: 35px;
+}
+
+.dress-for h3 {
+  color: #8b0000;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.dress-description p {
+  font-family: 'Tilda Sans', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #5d4037;
+  font-weight: 400;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .dress-code-exact {
+    padding: 30px 20px;
+  }
+  
+  .dress-code-exact h2 {
+    font-size: 2rem;
+  }
+  
+  .dress-text p {
+    font-size: 1.1rem;
+  }
+  
+  .dress-for h3 {
+    font-size: 1.5rem;
+  }
+  
+  .dress-description p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dress-code-exact h2 {
+    font-size: 1.8rem;
+  }
+  
+  .dress-text p {
+    font-size: 1rem;
+  }
+  
+  .dress-for h3 {
+    font-size: 1.3rem;
+  }
+  
+  .dress-description p {
+    font-size: 1rem;
+  }
+}
