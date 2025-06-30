@@ -7,9 +7,9 @@ function updateCountdown() {
 
     // Если время вышло
     if (diff <= 0) {
-        document.querySelector(".countdown-container").innerHTML = `
+        document.getElementById("countdown").innerHTML = `
             <div class="wedding-message">
-                <h2>🎉 Свадьба состоялась!</h2>
+                <h3>🎉 Свадьба уже состоялась!</h3>
                 <p>Спасибо, что были с нами в этот важный день!</p>
             </div>
         `;
@@ -41,15 +41,15 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
     const data = new FormData(form);
     const name = data.get('name');
     const attendance = data.get('attendance');
-    const guests = data.get('guests');
-    const comment = data.get('comment');
+    const guests = data.get('guests') || '1';
+    const comment = data.get('comment') || 'Нет комментария';
 
     // Статусное сообщение
     const statusMessage = document.getElementById('status-message');
     statusMessage.innerText = "Отправка данных...";
     statusMessage.style.color = "#4CAF50";
 
-    const message = `🎉 Новая RSVP заявка:\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment || 'Нет комментария'}`;
+    const message = `🎉 Новая RSVP заявка:\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment}`;
 
     const telegramBotToken = "8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs";
     const chatId = "-1002552991233";
@@ -65,7 +65,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         });
         
         if (response.ok) {
-            statusMessage.innerText = "Спасибо! Ответ отправлен 💌";
+            statusMessage.innerText = "Спасибо! Ваш ответ отправлен 💌";
             statusMessage.style.color = "green";
             form.reset();
         } else {
