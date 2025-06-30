@@ -357,8 +357,8 @@ iframe {
     padding: 20px;
   }
 }
-/* Стили для блока дресс-кода */
-.dress-code-section {
+/* Точная копия блока дресс-кода как на фото */
+.dress-code-exact {
   background-color: #f9f9f9;
   padding: 40px 30px;
   border-radius: 15px;
@@ -366,46 +366,80 @@ iframe {
   text-align: center;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   border: 1px solid #e8d0d3;
+  font-family: 'Playfair Display', serif;
 }
 
-.dress-code-section h2 {
+.dress-code-exact h2 {
   color: #8b0000;
   margin-bottom: 25px;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.dress-code-intro p {
-  font-size: 1.15rem;
+.dress-text p {
+  font-size: 1.3rem;
   line-height: 1.7;
-  margin-bottom: 15px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 15px 0;
+  color: #5d4037;
 }
 
-.dress-code-details {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 40px;
+.dress-for {
+  margin-top: 35px;
 }
 
-.dress-for-girls, .dress-for-men {
-  flex: 1;
-  min-width: 300px;
-  padding: 25px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.dress-for-girls h3, .dress-for-men h3 {
+.dress-for h3 {
   color: #8b0000;
-  margin-bottom: 25px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Цветовая па
+.dress-description p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: #5d4037;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .dress-code-exact {
+    padding: 30px 20px;
+  }
+  
+  .dress-code-exact h2 {
+    font-size: 2rem;
+  }
+  
+  .dress-text p {
+    font-size: 1.1rem;
+  }
+  
+  .dress-for h3 {
+    font-size: 1.5rem;
+  }
+  
+  .dress-description p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dress-code-exact h2 {
+    font-size: 1.8rem;
+  }
+  
+  .dress-text p {
+    font-size: 1rem;
+  }
+  
+  .dress-for h3 {
+    font-size: 1.3rem;
+  }
+  
+  .dress-description p {
+    font-size: 1rem;
+  }
+}
