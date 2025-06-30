@@ -3,155 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Свадебное приглашение</title>
-  
-  <!-- Стили -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.4/flipclock.min.css">
-  <style>
-    /* Базовые стили для мобильных */
-    body {
-      font-family: 'Great Vibes', cursive;
-      background-color: #fdf5e6;
-      margin: 0;
-      padding: 0;
-      color: #5d4037;
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .header {
-      color: #c49799;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-    
-    .photos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px 0;
-    }
-    
-    .photo-card {
-      flex: 1;
-      min-width: 150px;
-    }
-    
-    .photo-card img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 50%;
-      border: 3px solid #c49799;
-    }
-    
-    .group-photo img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    
-    .info {
-      background: rgba(255, 245, 230, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 30px 0;
-      text-align: left;
-    }
-    
-    .timer {
-      margin: 30px 0;
-    }
-    
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-    
-    form {
-      background: rgba(255, 245, 230, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: left;
-    }
-    
-    input, select, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #c49799;
-      border-radius: 5px;
-      font-family: inherit;
-    }
-    
-    button {
-      background: #c49799;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    #status-message {
-      text-align: center;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    
-    /* Аудио-контролы */
-    .audio-control {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: #c49799;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      z-index: 100;
-    }
-  </style>
+  <title>Свадьба Виктора и Виктории</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Кнопка управления звуком -->
-  <button class="audio-control">♪</button>
-  
   <div class="container">
     <h1 class="header">Свадьба Виктора и Виктории</h1>
     <h2 id="greeting">Добро пожаловать!</h2>
-   <!-- Таймер обратного отсчета -->
-<div class="countdown-container">
-    <h2>До свадьбы осталось:</h2>
-    <div class="countdown">
-        <div class="countdown-item">
-            <span id="days">00</span>
-            <div>дней</div>
-        </div>
-        <div class="countdown-item">
-            <span id="hours">00</span>
-            <div>часов</div>
-        </div>
-        <div class="countdown-item">
-            <span id="minutes">00</span>
-            <div>минут</div>
-        </div>
-        <div class="countdown-item">
-            <span id="seconds">00</span>
-            <div>секунд</div>
-        </div>
-    </div>
-</div>
     
+    <!-- Таймер обратного отсчета -->
+    <div class="countdown-clean" id="countdown">
+      <div class="unit">
+        <div id="days">00</div>
+        <label>дней</label>
+      </div>
+      <div class="unit">
+        <div id="hours">00</div>
+        <label>часов</label>
+      </div>
+      <div class="unit">
+        <div id="minutes">00</div>
+        <label>минут</label>
+      </div>
+      <div class="unit">
+        <div id="seconds">00</div>
+        <label>секунд</label>
+      </div>
+    </div>
+
     <!-- Фото молодоженов -->
     <div class="photos">
       <div class="photo-card">
@@ -163,18 +43,13 @@
         <p>Виктория Юрьевна</p>
       </div>
     </div>
-    
-    <!-- Таймер обратного отсчета -->
-    <div class="timer">
-      <div class="clock"></div>
-    </div>
-    
+
     <!-- Общее фото -->
     <div class="group-photo">
       <img src="images/together.jpg" alt="Молодожёны">
       <p>Наши молодожёны будут счастливы видеть вас на своём празднике!</p>
     </div>
-    
+
     <!-- Информация о событии -->
     <div class="info">
       <p><strong>Дата:</strong> 21 августа 2025</p>
@@ -235,72 +110,6 @@
     </form>
   </div>
 
-  <!-- Скрипты -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.4/flipclock.min.js"></script>
-  <script>
-    // Инициализация таймера
-    const weddingDate = new Date('August 21, 2025 16:30:00').getTime();
-    const clock = $('.clock').FlipClock({
-      clockFace: 'DailyCounter',
-      autoStart: true,
-      callbacks: {
-        stop: function() {
-          document.getElementById('greeting').textContent = 'Свадьба началась!';
-        }
-      }
-    });
-    
-    // Обновление времени каждую секунду
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-      
-      if (distance < 0) {
-        clock.stop();
-        return;
-      }
-      
-      // Рассчет дней, часов, минут, секунд
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      // Ручное обновление таймера
-      clock.setTime(days * 86400 + hours * 3600 + minutes * 60 + seconds);
-    }, 1000);
-
-    // Управление аудио
-    const audio = new Audio('romantic.mp3');
-    audio.loop = true;
-    
-    document.querySelector('.audio-control').addEventListener('click', function() {
-      if (audio.paused) {
-        audio.play();
-        this.textContent = '♪';
-      } else {
-        audio.pause();
-        this.textContent = '🔇';
-      }
-    });
-
-    // Обработка формы
-    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(this);
-      const statusMessage = document.getElementById('status-message');
-      
-      // Здесь должна быть реальная отправка данных
-      // Для демонстрации используем setTimeout
-      statusMessage.textContent = 'Отправка данных...';
-      statusMessage.style.color = '#4CAF50';
-      
-      setTimeout(() => {
-        statusMessage.textContent = 'Спасибо! Ваш ответ сохранён.';
-        this.reset();
-      }, 1500);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
