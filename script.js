@@ -1,14 +1,15 @@
 // Обратный отсчет
+const weddingDate = new Date('2025-08-21T16:30:00').getTime();
+
 function updateCountdown() {
-    const weddingDate = new Date("2025-08-21T16:30:00").getTime();
     const now = new Date().getTime();
     const diff = weddingDate - now;
 
     // Если время вышло
     if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = `
+        document.querySelector(".countdown-container").innerHTML = `
             <div class="wedding-message">
-                <p>🎉 Свадьба уже состоялась!</p>
+                <h2>🎉 Свадьба состоялась!</h2>
                 <p>Спасибо, что были с нами в этот важный день!</p>
             </div>
         `;
@@ -16,15 +17,12 @@ function updateCountdown() {
     }
 
     // Рассчет единиц времени
-    const totalSeconds = Math.floor(diff / 1000);
-    const weeks = Math.floor(totalSeconds / (7 * 24 * 3600));
-    const days = Math.floor((totalSeconds % (7 * 24 * 3600)) / (24 * 3600));
-    const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     // Обновление элементов
-    document.getElementById("weeks").textContent = String(weeks).padStart(2, "0");
     document.getElementById("days").textContent = String(days).padStart(2, "0");
     document.getElementById("hours").textContent = String(hours).padStart(2, "0");
     document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
@@ -46,7 +44,12 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
     const guests = data.get('guests');
     const comment = data.get('comment');
 
-    const message = `🎉 Новая RSVP заявка:\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment}`;
+    // Статусное сообщение
+    const statusMessage = document.getElementById('status-message');
+    statusMessage.innerText = "Отправка данных...";
+    statusMessage.style.color = "#4CAF50";
+
+    const message = `🎉 Новая RSVP заявка:\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment || 'Нет комментария'}`;
 
     const telegramBotToken = "8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs";
     const chatId = "-1002552991233";
@@ -62,16 +65,17 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         });
         
         if (response.ok) {
+            statusMessage.innerText = "Спасибо! Ответ отправлен 💌";
+            statusMessage.style.color = "green";
             form.reset();
-            document.getElementById('status-message').innerText = "Спасибо! Ответ отправлен 💌";
-            document.getElementById('status-message').style.color = "green";
         } else {
-            throw new Error('Ошибка при отправке');
+            const errorData = await response.json();
+            throw new Error(errorData.description || 'Ошибка сервера');
         }
     } catch (error) {
-        document.getElementById('status-message').innerText = "Ошибка при отправке. Попробуйте позже.";
-        document.getElementById('status-message').style.color = "red";
-        console.error('Ошибка:', error);
+        console.error('Ошибка отправки:', error);
+        statusMessage.innerText = "Ошибка: " + (error.message || "Попробуйте позже");
+        statusMessage.style.color = "red";
     }
 });
 
@@ -87,4 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (name) {
         document.getElementById("greeting").innerText = `Дорогая, ${name}!`;
     }
+    
+    // Запуск таймера после загрузки
+    updateCountdown();
 });
