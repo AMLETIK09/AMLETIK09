@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  text-align: center; /* Выравнивание всего текста по центру */
+  text-align: center;
 }
 
 .container {
@@ -28,13 +28,13 @@ body {
   color: #8b0000;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
-  text-align: center; /* Центрирование заголовка */
+  text-align: center;
 }
 
 .subheader {
   font-size: 1.3em;
   margin-bottom: 20px;
-  text-align: center; /* Центрирование подзаголовка */
+  text-align: center;
 }
 
 .photos {
@@ -73,7 +73,7 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   color: #5d4037;
-  text-align: center; /* Центрирование подписи */
+  text-align: center;
 }
 
 .group-photo img {
@@ -86,7 +86,7 @@ body {
 }
 
 .group-photo p {
-  text-align: center; /* Центрирование текста под фото */
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -121,12 +121,12 @@ body {
   margin: 40px 0;
   font-size: 1.1rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  text-align: center; /* Центрирование текста */
+  text-align: center;
 }
 
 .info p {
   margin: 10px 0;
-  text-align: center; /* Центрирование текста */
+  text-align: center;
 }
 
 iframe {
@@ -172,14 +172,16 @@ iframe {
   margin-top: 8px;
 }
 
-/* Стили для текстового контента */
+/* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ РАЗДЕЛА "ПРИГЛАШЕНИЕ" */
 .custom-text {
   max-width: 800px;
   margin: 50px auto;
   padding: 0 20px;
   font-size: 1.15rem;
   line-height: 1.7;
-  text-align: center; /* Центрирование текста */
+  text-align: center;
+  color: #000000; /* Чёрный цвет текста */
+  font-style: italic; /* Наклон вправо */
 }
 
 .custom-text h2 {
@@ -187,14 +189,17 @@ iframe {
   font-weight: 400;
   font-size: 2.2rem;
   margin-top: 40px;
-  color: #8b0000;
+  color: #000000; /* Чёрный цвет для заголовка */
   border-bottom: 2px solid #e8d0d3;
   padding-bottom: 10px;
+  font-style: italic; /* Наклон для заголовка */
 }
 
 .custom-text p {
   margin-top: 20px;
-  text-align: center; /* Центрирование текста */
+  text-align: center;
+  color: #000000; /* Чёрный цвет для параграфов */
+  font-style: italic; /* Наклон для текста */
 }
 
 /* Стили формы */
@@ -204,7 +209,7 @@ iframe {
   border-radius: 15px;
   margin: 40px 0;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  text-align: center; /* Центрирование формы */
+  text-align: center;
 }
 
 #rsvp-form h2 {
@@ -218,7 +223,7 @@ iframe {
   display: block;
   margin: 20px 0 8px;
   font-weight: bold;
-  text-align: center; /* Центрирование меток */
+  text-align: center;
 }
 
 #rsvp-form input,
@@ -232,7 +237,7 @@ iframe {
   font-size: 1rem;
   background: #fff;
   font-family: 'Tilda Sans', sans-serif;
-  margin: 0 auto; /* Центрирование полей ввода */
+  margin: 0 auto;
   display: block;
 }
 
@@ -263,7 +268,7 @@ iframe {
   font-size: 1.1rem;
   padding: 10px;
   border-radius: 5px;
-  text-align: center; /* Центрирование статусного сообщения */
+  text-align: center;
 }
 /* Адаптивный таймер */
 .countdown-clean {
@@ -422,7 +427,7 @@ iframe {
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   border: 1px solid #e8d0d3;
   font-family: 'Patrician', serif;
-  text-align: center; /* Центрирование текста */
+  text-align: center;
 }
 
 .dress-code-exact h2 {
