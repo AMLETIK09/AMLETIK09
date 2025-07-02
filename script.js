@@ -95,3 +95,54 @@ document.addEventListener("DOMContentLoaded", () => {
     // Запуск таймера после загрузки
     updateCountdown();
 });
+
+// Управление фоновой музыкой
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('background-music');
+  const toggleBtn = document.getElementById('music-toggle');
+  const volumeSlider = document.getElementById('volume-slider');
+  
+  // Устанавливаем начальную громкость
+  audio.volume = 0.5;
+  
+  // Обработчик для кнопки вкл/выкл
+  toggleBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().catch(e => console.log("Play error:", e));
+      toggleBtn.textContent = '♪';
+      toggleBtn.style.color = '#fff';
+    } else {
+      audio.pause();
+      toggleBtn.textContent = '♪';
+      toggleBtn.style.color = '#ccc';
+    }
+  });
+  
+  // Регулятор громкости
+  volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+  });
+  
+  // Автовоспроизведение после взаимодействия пользователя
+  const startMusic = () => {
+    try {
+      audio.play().then(() => {
+        toggleBtn.textContent = '♪';
+        toggleBtn.style.color = '#fff';
+      }).catch(e => console.log("Play error:", e));
+      document.removeEventListener('click', startMusic);
+    } catch (e) {
+      console.log("Audio play error:", e);
+    }
+  };
+  
+  // Пытаемся запустить при загрузке (может не сработать в некоторых браузерах)
+  setTimeout(() => {
+    if (audio.paused) {
+      audio.play().catch(() => {
+        // Если не получилось, ждем клика пользователя
+        document.addEventListener('click', startMusic);
+      });
+    }
+  }, 2000);
+});
