@@ -1,59 +1,39 @@
+/* Добавление шрифта Patrician */
 @font-face {
-  font-family: 'Rupster Script Free';
-  src: url('https://dl.dropboxusercontent.com/s/6b3q5w6z1z5d9j0/RupsterScriptFree.woff2') format('woff2'),
-       url('https://dl.dropboxusercontent.com/s/2s2h2i5p4d4s2k1/RupsterScriptFree.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Patrician';
+    src: url('fonts/Patrician.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Обновление всех заголовков */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Patrician', serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
 }
 
 .header {
-  font-family: 'Rupster Script Free', cursive;
-  font-size: 4.5rem; /* Увеличим размер для лучшей читаемости */
-  color: #d8a8b9; /* Нежный пудровый цвет */
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для контраста */
-  line-height: 1.2;
+    font-family: 'Patrician', serif;
+    font-size: 4.5rem;
+    color: #d8a8b9;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
 }
 
 #greeting {
-  font-family: 'Rupster Script Free', cursive;
-  font-size: 2.8rem;
-  color: #d8a8b9; /* Тот же пудровый цвет */
-  margin-bottom: 40px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1.5px;
-}
-
-/* Увеличим контраст на мобильных устройствах */
-@media (max-width: 768px) {
-  .header {
-    font-size: 3.5rem;
-    color: #c97d9a; /* Чуть более насыщенный оттенок */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  }
-  
-  #greeting {
-    font-size: 2.2rem;
-    color: #c97d9a;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
+    font-family: 'Patrician', serif;
     font-size: 2.8rem;
-  }
-  
-  #greeting {
-    font-size: 1.8rem;
-  }
+    color: #d8a8b9;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* Подключение шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
-@import url('https://fonts.cdnfonts.com/css/patrician');
-@import url('https://fonts.cdnfonts.com/css/tilda-sans');
 
 body {
   background-color: #ffffff;
@@ -71,16 +51,6 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-}
-
-.header {
-  font-family: 'Patrician', serif;
-  font-weight: 400;
-  font-size: 2.8rem;
-  color: #8b0000;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-  text-align: center;
 }
 
 .subheader {
@@ -232,26 +202,25 @@ iframe {
   font-size: 1.15rem;
   line-height: 1.7;
   text-align: center;
-  color: #000000; /* Чёрный цвет текста */
-  font-style: italic; /* Наклон вправо */
+  color: #000000;
+  font-style: italic;
 }
 
 .custom-text h2 {
   font-family: 'Patrician', serif;
-  font-weight: 400;
   font-size: 2.2rem;
   margin-top: 40px;
-  color: #000000; /* Чёрный цвет для заголовка */
+  color: #000000;
   border-bottom: 2px solid #e8d0d3;
   padding-bottom: 10px;
-  font-style: italic; /* Наклон для заголовка */
+  font-style: italic;
 }
 
 .custom-text p {
   margin-top: 20px;
   text-align: center;
-  color: #000000; /* Чёрный цвет для параграфов */
-  font-style: italic; /* Наклон для текста */
+  color: #000000;
+  font-style: italic;
 }
 
 /* Стили формы */
@@ -266,7 +235,6 @@ iframe {
 
 #rsvp-form h2 {
   font-family: 'Patrician', serif;
-  font-weight: 400;
   color: #8b0000;
   margin-bottom: 25px;
 }
@@ -560,87 +528,5 @@ iframe {
   
   .dress-description p {
     font-size: 1rem;
-  }
-}
-
-/* Стили для музыкального контрола */
-.music-control {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(139, 0, 0, 0.8);
-  padding: 10px 15px;
-  border-radius: 30px;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-}
-
-#music-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-#music-toggle:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#volume-slider {
-  width: 80px;
-  height: 5px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  outline: none;
-}
-
-#volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-}
-
-#volume-slider::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-  border: none;
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-  .music-control {
-    bottom: 10px;
-    right: 10px;
-    padding: 8px 12px;
-  }
-  
-  #music-toggle {
-    font-size: 20px;
-    width: 35px;
-    height: 35px;
-  }
-  
-  #volume-slider {
-    width: 60px;
   }
 }
