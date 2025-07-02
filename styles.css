@@ -614,9 +614,8 @@ iframe {
     text-align: right;
     margin-top: -5px; /* Подъем даты вверх */
     margin-right: 30px; /* Сдвиг даты вправо */
-    z-index: 2; /* Чтобы дата была поверх фото */
+    z-index: 0; /* Чтобы дата была поверх фото */
     position: relative;
-    background: rgba(255, 255, 255, 0.9); /* Легкий фон для читаемости */
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
