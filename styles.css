@@ -571,27 +571,29 @@ iframe {
     font-display: swap;
 }
 
-/* Новый стиль для секции с текстом и фото */
+/* Герой-секция */
 .hero-section {
-    margin-bottom: 40px;
-}
-
-.hero-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .hero-text {
     flex: 1;
-    min-width: 300px; /* Минимальная ширина текстового блока */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-photo {
     flex: 1;
+    min-width: 300px;
     max-width: 45%;
-    min-width: 300px; /* Минимальная ширина фото */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-photo img {
@@ -642,18 +644,24 @@ iframe {
     text-transform: uppercase;
 }
 
-/* Адаптация для планшетов */
-@media (max-width: 992px) {
+/* Адаптация для всех устройств */
+@media (max-width: 1200px) {
     .hero-names {
-        font-size: 3.8rem;
+        font-size: 4rem;
     }
     
     .symbol {
-        font-size: 3rem;
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-names {
+        font-size: 3.5rem;
     }
     
     .hero-date {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
     
     .hero-subtitle {
@@ -661,28 +669,19 @@ iframe {
     }
 }
 
-/* Адаптация для мобильных - сохраняем расположение */
 @media (max-width: 768px) {
-    .hero-content {
-        flex-wrap: nowrap; /* Запрещаем перенос */
-        overflow-x: auto; /* Добавляем горизонтальную прокрутку при необходимости */
+    .hero-section {
+        flex-direction: row;
         gap: 20px;
-        padding-bottom: 15px; /* Для индикации прокрутки */
     }
     
-    .hero-text {
-        flex: 0 0 auto; /* Не сжимается */
-        min-width: 280px;
-    }
-    
-    .hero-photo {
-        flex: 0 0 auto; /* Не сжимается */
-        min-width: 250px;
-        max-width: 40%;
+    .hero-text, .hero-photo {
+        min-width: calc(50% - 20px);
+        max-width: calc(50% - 20px);
     }
     
     .hero-names {
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
     
     .symbol {
@@ -699,16 +698,26 @@ iframe {
 }
 
 @media (max-width: 576px) {
-    .hero-names {
-        font-size: 2.8rem;
+    .hero-section {
+        gap: 15px;
     }
     
-    .symbol {
+    .hero-text, .hero-photo {
+        min-width: calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+    
+    .hero-names {
         font-size: 2.5rem;
     }
     
+    .symbol {
+        font-size: 2.3rem;
+    }
+    
     .hero-date {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        padding-top: 10px;
     }
     
     .hero-subtitle {
@@ -717,19 +726,38 @@ iframe {
     }
 }
 
-/* Индикатор горизонтальной прокрутки на мобильных */
-@media (max-width: 768px) {
-    .hero-content::-webkit-scrollbar {
-        height: 5px;
+@media (max-width: 480px) {
+    .hero-names {
+        font-size: 2.2rem;
     }
     
-    .hero-content::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
+    .symbol {
+        font-size: 2rem;
     }
     
-    .hero-content::-webkit-scrollbar-thumb {
-        background: #d8a8b9;
-        border-radius: 10px;
+    .hero-date {
+        font-size: 1.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-names {
+        font-size: 1.9rem;
+    }
+    
+    .symbol {
+        font-size: 1.8rem;
+    }
+    
+    .hero-date {
+        font-size: 1.1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }
