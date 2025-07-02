@@ -577,23 +577,29 @@ iframe {
     flex-wrap: wrap;
     gap: 40px;
     margin-bottom: 40px;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
 }
 
 .hero-text {
     flex: 1;
     min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-top: 20px; /* Сдвиг текста вниз для выравнивания с фото */
 }
 
-.hero-photo {
+.hero-right {
     flex: 1;
     min-width: 300px;
     max-width: 45%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивание по правому краю */
+}
+
+.hero-photo {
+    width: 100%;
+    margin-top: -30px; /* Подъем фото вверх */
+    margin-right: -20px; /* Сдвиг фото вправо */
+    z-index: 2; /* Чтобы фото было поверх других элементов */
 }
 
 .hero-photo img {
@@ -601,7 +607,20 @@ iframe {
     max-height: 500px;
     object-fit: cover;
     border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border: 10px solid white; /* Белая рамка для фото */
+}
+
+.hero-date-container {
+    text-align: right;
+    margin-top: -25px; /* Подъем даты вверх */
+    margin-right: 30px; /* Сдвиг даты вправо */
+    z-index: 3; /* Чтобы дата была поверх фото */
+    position: relative;
+    background: rgba(255, 255, 255, 0.9); /* Легкий фон для читаемости */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero-names {
@@ -626,19 +645,16 @@ iframe {
 
 .hero-date {
     font-family: 'Patrician', serif;
-    font-size: 2.2rem;
-    margin-top: 20px;
+    font-size: 1.6rem; /* Уменьшенный размер */
     letter-spacing: 1px;
     color: #5d4037;
-    border-top: 2px solid #e8d0d3;
-    padding-top: 15px;
-    display: inline-block;
+    white-space: nowrap; /* Запрет переноса */
 }
 
 .hero-subtitle {
     font-family: 'Patrician', serif;
-    font-size: 1.8rem;
-    margin-top: 15px;
+    font-size: 1.4rem; /* Уменьшенный размер */
+    margin-top: 5px;
     letter-spacing: 4px;
     color: #8b0000;
     text-transform: uppercase;
@@ -661,11 +677,11 @@ iframe {
     }
     
     .hero-date {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .hero-subtitle {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -675,9 +691,19 @@ iframe {
         gap: 20px;
     }
     
-    .hero-text, .hero-photo {
+    .hero-text, .hero-right {
         min-width: calc(50% - 20px);
         max-width: calc(50% - 20px);
+    }
+    
+    .hero-photo {
+        margin-top: -15px;
+        margin-right: -10px;
+    }
+    
+    .hero-date-container {
+        margin-top: -20px;
+        margin-right: 15px;
     }
     
     .hero-names {
@@ -689,11 +715,11 @@ iframe {
     }
     
     .hero-date {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
     
     .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -702,9 +728,13 @@ iframe {
         gap: 15px;
     }
     
-    .hero-text, .hero-photo {
+    .hero-text, .hero-right {
         min-width: calc(50% - 15px);
         max-width: calc(50% - 15px);
+    }
+    
+    .hero-photo img {
+        border-width: 6px;
     }
     
     .hero-names {
@@ -716,12 +746,11 @@ iframe {
     }
     
     .hero-date {
-        font-size: 1.4rem;
-        padding-top: 10px;
+        font-size: 1.1rem;
     }
     
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 0.95rem;
         letter-spacing: 3px;
     }
 }
@@ -736,11 +765,11 @@ iframe {
     }
     
     .hero-date {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -754,10 +783,10 @@ iframe {
     }
     
     .hero-date {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
