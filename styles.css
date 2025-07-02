@@ -597,7 +597,7 @@ iframe {
 
 .hero-photo {
     width: 90%;
-    margin-top: -10px; /* Подъем фото вверх */
+    margin-top: 0px; /* Подъем фото вверх */
     margin-right: -20px; /* Сдвиг фото вправо */
     z-index: 2; /* Чтобы фото было поверх других элементов */
 }
@@ -693,7 +693,7 @@ iframe {
     }
     
     .hero-photo {
-        margin-top: -10px;
+        margin-top: 0px;
         margin-right: -10px;
     }
     
