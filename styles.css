@@ -608,14 +608,13 @@ iframe {
     object-fit: cover;
     border-radius: 5px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    border: 10px solid white; /* Белая рамка для фото */
 }
 
 .hero-date-container {
     text-align: right;
-    margin-top: -25px; /* Подъем даты вверх */
+    margin-top: -5px; /* Подъем даты вверх */
     margin-right: 30px; /* Сдвиг даты вправо */
-    z-index: 3; /* Чтобы дата была поверх фото */
+    z-index: 2; /* Чтобы дата была поверх фото */
     position: relative;
     background: rgba(255, 255, 255, 0.9); /* Легкий фон для читаемости */
     padding: 10px 20px;
