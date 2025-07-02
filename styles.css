@@ -571,56 +571,104 @@ iframe {
     font-display: swap;
 }
 
-/* Новый стиль для заголовка по макету */
-.hero-header {
-    text-align: center;
+/* Новый стиль для секции с текстом и фото */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 40px;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 1;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.hero-photo {
+    flex: 1;
+    max-width: 45%;
+}
+
+.hero-photo img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .hero-names {
     font-family: 'Patrician', serif;
-    font-size: 5.5rem;
-    line-height: 1;
-    letter-spacing: 3px;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
     margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .name-line {
-    margin: 15px 0;
+    margin: 10px 0;
     color: #5d4037;
 }
 
 .symbol {
-    font-size: 4rem;
-    margin: 10px 0;
+    font-size: 3.5rem;
+    margin: 5px 0 10px;
     color: #d8a8b9;
+    text-align: center;
 }
 
 .hero-date {
     font-family: 'Patrician', serif;
-    font-size: 2.5rem;
-    margin-top: 30px;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
     color: #5d4037;
+    border-top: 2px solid #e8d0d3;
+    padding-top: 15px;
+    display: inline-block;
 }
 
 .hero-subtitle {
     font-family: 'Patrician', serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-top: 15px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     color: #8b0000;
     text-transform: uppercase;
 }
 
 /* Адаптация для мобильных */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .hero-photo {
+        max-width: 100%;
+        order: -1; /* Фото сверху на мобильных */
+    }
+    
+    .symbol {
+        text-align: center;
+    }
+    
+    .hero-date {
+        display: block;
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-names {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     
     .symbol {
@@ -628,17 +676,17 @@ iframe {
     }
     
     .hero-date {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-names {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     
     .symbol {
@@ -646,14 +694,11 @@ iframe {
     }
     
     .hero-date {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         letter-spacing: 3px;
     }
 }
-
-/* Остальные стили без изменений */
-/* ... (все остальные стили из предыдущей версии) ... */
