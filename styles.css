@@ -607,22 +607,15 @@ iframe {
     z-index: 2;
 }
 
-.hero-photo img {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0 15px 70px rgba(0, 0, 0, 0.2);
-}
-
-.hero-date-container {
-    text-align: right;
-    margin-top: -5px;
-    margin-right: 25px;
-  position: relative;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
+    .hero-photo {
+        margin-top: 0px;
+        margin-right: -20px;
+    }
+    
+    .hero-date-container {
+        margin-top: -20px;
+        margin-right: -25px;
+    }
 
 .hero-names {
     font-family: 'Patrician', serif;
