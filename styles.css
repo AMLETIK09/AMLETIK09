@@ -607,7 +607,7 @@ iframe {
     z-index: 2;
 }
 
-    .hero-photo {
+       .hero-photo {
         margin-top: 0px;
         margin-right: -20px;
     }
@@ -616,7 +616,6 @@ iframe {
         margin-top: -20px;
         margin-right: -25px;
     }
-
 .hero-names {
     font-family: 'Patrician', serif;
     font-size: 4.5rem;
