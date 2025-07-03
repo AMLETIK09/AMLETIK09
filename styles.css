@@ -84,16 +84,17 @@ body {
 /* Общие стили для всех строк */
 .name-line {
   margin: 5px 0;
-  color: #000000;
+  color: #000000; /* Черный цвет */
   display: block;
-  font-family: 'Patrician', serif;
+  font-family: 'Patrician', serif; /* Единый шрифт */
   line-height: 1.1;
   letter-spacing: 1px;
+  text-align: center; /* Центрируем текст */
 }
 
 /* Индивидуальные стили для каждой строки */
 .name-decor-top {
-  font-size: 1.8rem;
+  font-size: 4.5rem;
   opacity: 0.8;
   letter-spacing: 3px;
 }
@@ -102,30 +103,114 @@ body {
   font-size: 4.5rem;
   text-transform: uppercase;
   font-weight: 500;
-   border-top: 2px solid #e8d0d3; /* Полоска сверху */
+  border-top: 2px solid #000000; /* Черная полоска */
   padding-top: 10px;
+  margin-top: 10px;
 }
 
 .name-symbol {
   font-size: 3.5rem;
   margin: 10px 0;
-  color: #d8a8b9;
+  color: #000000; /* Черный цвет */
 }
 
 .name-bride {
   font-size: 4.5rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: #c97d9a;
+  color: #000000; /* Черный цвет */
 }
 
 .name-decor-bottom {
-  font-size: 1.8rem;
+  font-size: 4.5rem;
   opacity: 0.8;
   letter-spacing: 3px;
   margin-top: 10px;
-   border-top: 2px solid #e8d0d3; /* Полоска сверху */
+  border-top: 2px solid #000000; /* Черная полоска */
   padding-top: 10px;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 992px) {
+  .name-decor-top,
+  .name-groom,
+  .name-symbol,
+  .name-bride,
+  .name-decor-bottom {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .name-decor-top,
+  .name-groom,
+  .name-symbol,
+  .name-bride,
+  .name-decor-bottom {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  
+  .name-groom,
+  .name-bride {
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .name-decor-top,
+  .name-groom,
+  .name-symbol,
+  .name-bride,
+  .name-decor-bottom {
+    font-size: 2.5rem;
+  }
+  
+  .name-symbol {
+    margin: 5px 0;
+  }
+  
+  .name-groom,
+  .name-bride {
+    border-top-width: 1px;
+    padding-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name-decor-top,
+  .name-groom,
+  .name-symbol,
+  .name-bride,
+  .name-decor-bottom {
+    font-size: 2rem;
+    letter-spacing: normal;
+  }
+  
+  .name-decor-top,
+  .name-decor-bottom {
+    font-size: 1.8rem;
+  }
+  
+  .name-groom,
+  .name-bride {
+    border-top: none; /* Убираем полоски на маленьких экранах */
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .name-decor-top,
+  .name-groom,
+  .name-symbol,
+  .name-bride,
+  .name-decor-bottom {
+    font-size: 1.7rem;
+  }
+  
+  .name-symbol {
+    font-size: 2rem;
+  }
 }
 /* Герой-секция - оптимизирована для мобильных */
 .hero-section {
