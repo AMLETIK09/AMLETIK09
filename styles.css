@@ -81,6 +81,52 @@ body {
   }
 }
 
+/* Общие стили для всех строк */
+.name-line {
+  margin: 5px 0;
+  color: #000000;
+  display: block;
+  font-family: 'Patrician', serif;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+/* Индивидуальные стили для каждой строки */
+.name-decor-top {
+  font-size: 1.8rem;
+  opacity: 0.8;
+  letter-spacing: 3px;
+}
+
+.name-groom {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+   border-top: 2px solid #e8d0d3; /* Полоска сверху */
+  padding-top: 10px;
+}
+
+.name-symbol {
+  font-size: 3.5rem;
+  margin: 10px 0;
+  color: #d8a8b9;
+}
+
+.name-bride {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #c97d9a;
+}
+
+.name-decor-bottom {
+  font-size: 1.8rem;
+  opacity: 0.8;
+  letter-spacing: 3px;
+  margin-top: 10px;
+   border-top: 2px solid #e8d0d3; /* Полоска сверху */
+  padding-top: 10px;
+}
 /* Герой-секция - оптимизирована для мобильных */
 .hero-section {
   display: flex;
