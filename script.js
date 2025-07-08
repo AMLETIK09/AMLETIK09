@@ -1,3 +1,5 @@
+// --- ФАЙЛ script.js (ИСПРАВЛЕННАЯ ВЕРСИЯ) ---
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Анимация появления блоков при скролле ---
@@ -12,14 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            rootMargin: '0px 0px -100px 0px' // Анимация начнется, когда элемент будет в 100px от низа экрана
+            rootMargin: '0px 0px -100px 0px'
         });
 
         animatedElements.forEach(el => {
             observer.observe(el);
         });
     } else {
-        // Фолбэк для старых браузеров: просто показать все элементы
         animatedElements.forEach(el => {
             el.classList.add('is-visible');
         });
@@ -32,24 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCountdown() {
         const now = new Date().getTime();
         const diff = weddingDate - now;
-
         if (!countdownElement) return;
-
         if (diff <= 0) {
-            countdownElement.innerHTML = `
-                <div class="wedding-message">
-                    <h3>🎉 Свадьба уже состоялась!</h3>
-                    <p>Спасибо, что были с нами в этот важный день!</p>
-                </div>
-            `;
+            countdownElement.innerHTML = `<div class="wedding-message"><h3>🎉 Свадьба уже состоялась!</h3><p>Спасибо, что были с нами в этот важный день!</p></div>`;
             return;
         }
-
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
         document.getElementById("days").textContent = String(days).padStart(2, "0");
         document.getElementById("hours").textContent = String(hours).padStart(2, "0");
         document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
@@ -66,23 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', async function (e) {
             e.preventDefault();
-
             const form = e.target;
             const data = new FormData(form);
             const name = data.get('name');
             const attendance = data.get('attendance');
             const guests = data.get('guests') || '1';
             const comment = data.get('comment') || 'Нет комментария';
-
             const statusMessage = document.getElementById('status-message');
             statusMessage.innerText = "Отправка данных...";
             statusMessage.style.color = "#555";
-
             const message = `🎉 Новая RSVP заявка:\n\n👤 Имя: ${name}\n✅ Придёт: ${attendance}\n👥 Гостей: ${guests}\n💬 Комментарий: ${comment}`;
-
             const telegramBotToken = "8042335847:AAG7YW94wZ7Hq7M04S5W-3VPHV1TCGY-zPs";
             const chatId = "-1002552991233";
-
             try {
                 const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
                     method: 'POST',
@@ -92,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         text: message
                     })
                 });
-
                 if (response.ok) {
                     statusMessage.innerText = "Спасибо! Ваш ответ отправлен 💌";
                     statusMessage.style.color = "green";
@@ -127,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (audio && toggleBtn && volumeSlider) {
         audio.volume = 0.5;
-
         toggleBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play().catch(e => console.log("Ошибка воспроизведения:", e));
@@ -135,22 +120,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 audio.pause();
             }
         });
-
         audio.onplay = () => {
             toggleBtn.style.color = '#fff';
-            toggleBtn.innerHTML = '♫'; // Нота
+            toggleBtn.innerHTML = '♫';
         };
-
         audio.onpause = () => {
             toggleBtn.style.color = '#ccc';
-            toggleBtn.innerHTML = '♪'; // Перечеркнутая нота
+            toggleBtn.innerHTML = '♪';
         };
-
         volumeSlider.addEventListener('input', () => {
             audio.volume = volumeSlider.value;
         });
-
-        // Пытаемся запустить музыку после первого взаимодействия
         const startMusic = () => {
             audio.play().catch(() => {});
             document.body.removeEventListener('click', startMusic);
