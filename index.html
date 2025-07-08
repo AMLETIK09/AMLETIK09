@@ -3,31 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Victor&Victoria's family</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Victor & Victoria's family</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Временный шрифт для загрузки */
-    body {
-        font-family: Georgia, serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: Georgia, serif;
-    }
-  </style>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 <body>
-  <div class="container">
-  <div class="hero-section">
-    <div class="hero-text">
-      <div class="hero-names">
-        <div class="name-line name-groom">ВИКТОР</div>
-        <div class="name-line name-symbol">&</div>
-        <div class="name-line name-bride">ВИКТОРИЯ</div>
+
+  <main class="container">
+    
+    <!-- Главный экран -->
+    <header class="hero-section">
+      <div class="hero-left">
+        <h1 id="greeting" class="header">Дорогие гости!</h1>
+        <div class="hero-names">
+          <div class="name-line name-groom">ВИКТОР</div>
+          <div class="name-line name-symbol">&</div>
+          <div class="name-line name-bride">ВИКТОРИЯ</div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
       
       <div class="hero-right">
         <div class="hero-photo">
@@ -38,10 +36,10 @@
           <div class="hero-subtitle">ЖДЕМ ВАС</div>
         </div>
       </div>
-    </div>
+    </header>
     
     <!-- Таймер обратного отсчета -->
-    <div class="countdown-clean" id="countdown">
+    <div class="countdown-clean fade-in-up" id="countdown">
       <div class="unit">
         <div id="days">00</div>
         <label>дней</label>
@@ -60,21 +58,20 @@
       </div>
     </div>
 
-    <!-- Остальная часть сайта без изменений -->
-
     <!-- Фото молодоженов -->
-    <div class="photo-card">
-  <img src="images/vitia.jpg" alt="Виктор">
-  <p class="groom-name">Виктор</p>
-</div>
-
-<div class="photo-card">
-  <img src="images/vika.jpg" alt="Виктория">
-  <p class="bride-name">Виктория</p>
-</div>
+    <section class="photos fade-in-up">
+      <div class="photo-card">
+        <img src="images/vitia.jpg" alt="Виктор">
+        <p class="groom-name">Виктор</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/vika.jpg" alt="Виктория">
+        <p class="bride-name">Виктория</p>
+      </div>
+    </section>
     
     <!-- Детали мероприятия -->
-    <section class="custom-text">
+    <section class="custom-text fade-in-up">
       <h2>Приглашение</h2>
       <p>
         Мы рады сообщить Вам, что 21.08.2025 состоится самое главное торжество в нашей жизни — день нашей свадьбы!<br>
@@ -100,59 +97,76 @@
     </section>
 
     <!-- Информация о событии -->
-    <div class="info">
+    <section class="info fade-in-up">
       <p><strong>Дата:</strong> 21 августа 2025</p>
       <p><strong>Время:</strong> 16:30</p>
       <p><strong>Адрес:</strong> г. Темрюк, ул. Кирова 6/1, ресторан "Парк Холл"</p>
-    </div>
+    </section>
     
     <!-- Карта -->
-    <iframe src="https://www.google.com/maps?q=Темрюк+Кирова+6/1&output=embed" allowfullscreen loading="lazy"></iframe>
+    <div class="map-container fade-in-up">
+      <iframe src="https://www.google.com/maps?q=Темрюк+Кирова+6/1&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
 
-  <!-- Добавьте этот блок перед формой RSVP -->
-<section class="dress-code-exact">
-  <h2>ДРЕСС-КОД</h2>
-  
-  <div class="dress-text">
-    <p>Мы с особым трепетом готовимся к этому дню!</p>
-    <p>Просим поддержать нас Вашим хорошим настроением,</p>
-    <p>а так же прекрасным однотонным нарядом в приглушенных пудровых оттенках.</p>
-  </div>
-  
-  <div class="dress-for">
-    <h3>ДЛЯ ДЕВУШЕК</h3>
-    <div class="dress-description">
-          <!-- Палитра цветов -->
-    <div class="group-photo">
-      <img src="images/dress.jpg" alt="Молодожёны">
-    </div>
-      <p>Для мужчин</p>
-      <p>Темный низ и белая рубашка или поло.</p>
-    </div>
-  </div>
-</section>
+    <!-- Дресс-код -->
+    <section class="dress-code-exact fade-in-up">
+      <h2>ДРЕСС-КОД</h2>
+      <div class="dress-text">
+        <p>Мы с особым трепетом готовимся к этому дню!</p>
+        <p>Просим поддержать нас Вашим хорошим настроением,<br>а так же прекрасным однотонным нарядом в приглушенных пудровых оттенках.</p>
+      </div>
+      <div class="dress-columns-container">
+        <div class="dress-column">
+          <h3>ДЛЯ ДЕВУШЕK</h3>
+          <div class="dress-description">
+            <div class="group-photo">
+              <img src="images/dress.jpg" alt="Палитра для девушек">
+            </div>
+          </div>
+        </div>
+        <div class="dress-column">
+          <h3>ДЛЯ МУЖЧИН</h3>
+          <div class="dress-description">
+            <p>Темный низ (брюки/джинсы)</p>
+            <p>и</p>
+            <p>белая рубашка или поло.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Форма подтверждения -->
-    <form id="rsvp-form">
+    <form id="rsvp-form" class="fade-in-up">
       <h2>Подтвердите участие</h2>
       <label>Ваше имя:</label>
       <input type="text" name="name" required>
       
       <label>Придёте ли вы?</label>
       <select name="attendance" required>
-        <option value="Да">Да</option>
-        <option value="Нет">Нет</option>
-        <option value="Возможно">Возможно</option>
+        <option value="Да">Да, с удовольствием!</option>
+        <option value="Нет">К сожалению, не смогу</option>
+        <option value="Возможно">Сообщу позже</option>
       </select>
       
       <label>Количество человек:</label>
-      <input type="number" name="guests" min="1" max="10">
+      <input type="number" name="guests" min="1" max="10" placeholder="1">
       
       <label>Комментарий:</label>
-      <textarea name="comment" rows="3"></textarea>
+      <textarea name="comment" rows="3" placeholder="Ваши пожелания или предпочтения в меню"></textarea>
       
       <button type="submit">Отправить</button>
       <p id="status-message"></p>
     </form>
+  </main>
+  
+  <!-- Элементы для музыки -->
+  <audio id="background-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-controls">
+    <button id="music-toggle">♪</button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5">
   </div>
 
   <script src="script.js"></script>
