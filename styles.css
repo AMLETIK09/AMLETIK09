@@ -217,17 +217,24 @@ body {
 }
 
 /* --- ИНФОРМАЦИЯ И КАРТА --- */
+/* --- ИНФОРМАЦИЯ И КАРТА --- */
 .info {
-  background: #f9f9f9;
+  /* Эффект матового стекла */
+  background: rgba(249, 249, 249, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(230, 230, 230, 0.6);
   padding: 25px;
   border-radius: 15px;
   margin: 40px 0;
   font-size: 1.1rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
 }
 .info p {
   margin: 12px 0;
 }
+/* Остальные стили для карты без изменений */
 .map-container {
   border-radius: 12px;
   overflow: hidden;
@@ -243,11 +250,16 @@ iframe {
 
 /* --- ДРЕСС-КОД --- */
 .dress-code-exact {
-  background-color: #f9f9f9;
+  /* Эффект матового стекла */
+  background: rgba(249, 249, 249, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(230, 230, 230, 0.6);
   padding: 35px 25px;
   border-radius: 15px;
   margin: 40px 0;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
 }
 .dress-code-exact h2 {
   font-family: 'Patrician', serif;
@@ -255,6 +267,7 @@ iframe {
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
+/* Остальные стили внутри блока дресс-кода без изменений */
 .dress-text p {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -281,21 +294,26 @@ iframe {
   width: 100%;
   border-radius: 10px;
 }
-
 /* --- ФОРМА RSVP --- */
 #rsvp-form {
-  background: #fdf6f7;
+  /* Эффект матового стекла */
+  background: rgba(253, 246, 247, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(242, 228, 230, 0.5);
   padding: 30px;
   border-radius: 15px;
   margin: 40px auto;
   max-width: 700px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
 }
 #rsvp-form h2 {
   font-family: 'Patrician', serif;
   font-size: 2rem;
   margin-bottom: 25px;
 }
+/* Остальные стили для полей и кнопок без изменений */
 #rsvp-form label {
   display: block;
   margin: 15px 0 8px;
